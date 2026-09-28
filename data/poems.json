@@ -1,0 +1,25 @@
+[
+  {
+    "id": "post1",
+    "title": "秋夜",
+    "date": "2026-09-20",
+    "category": "七绝",
+    "tags": [
+      "秋",
+      "月",
+      "夜"
+    ],
+    "url": "poems/post1.html"
+  },
+  {
+    "id": "post2",
+    "title": "风",
+    "date": "2026-08-31",
+    "category": "现代诗",
+    "tags": [
+      "风",
+      "时间"
+    ],
+    "url": "poems/post2.html"
+  }
+]
