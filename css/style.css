@@ -140,45 +140,6 @@ button {
   color: var(--muted);
 }
 
-.home {
-  height:100dvh;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-title {
-  font-size: clamp(7rem, 24vw, 20rem);
-  line-height: 0.8;
-  font-weight: 700;
-  letter-spacing: -0.08em;
-  transition: color 180ms ease;
-}
-
-.home-title:hover {
-  color: var(--accent);
-}
-
-.home-rule {
-  width: min(160px, 30vw);
-  height: 2px;
-  margin: 48px 0 28px;
-  background: var(--accent);
-}
-
-.home-links {
-  display: flex;
-  gap: 28px;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-.home-links a:hover {
-  color: var(--accent);
-}
-
 .post-list {
   border-top: 1px solid var(--line);
 }
@@ -332,15 +293,6 @@ button {
 
   .page-heading {
     margin-bottom: 48px;
-  }
-
-  .home {
-    min-height: calc(100vh - 69px);
-    padding: 24px;
-  }
-
-  .home-title {
-    font-size: clamp(5.5rem, 28vw, 10rem);
   }
 
   .post-item {
