@@ -161,3 +161,13 @@ function escapeHTML(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }
+
+window.addEventListener("load", function(){
+    const loader = document.getElementById("page-loader");
+    if(loader){
+        loader.style.opacity = "0";
+        setTimeout(function(){
+            loader.remove();
+        },600);
+    }
+});
