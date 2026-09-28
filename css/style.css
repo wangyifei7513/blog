@@ -370,12 +370,31 @@ button {
 }
 
 /* 页面加载过渡层 */
+/* 页面初始化隐藏 */
+body.loading {
+  visibility: hidden;
+}
+
+
+/* loader始终覆盖 */
 #page-loader {
+
   position: fixed;
+
   inset: 0;
+
   background: var(--bg);
-  z-index: 9999;
+
+  z-index: 99999;
+
   opacity: 1;
-  transition: opacity 0.6s ease;
-  pointer-events: none;
+
+  transition: opacity .6s ease;
+
+}
+
+
+/* 页面恢复 */
+body.loaded {
+  visibility: visible;
 }
