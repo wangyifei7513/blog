@@ -41,6 +41,8 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
+  display: flex;
+  flex-direction: column;
   font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
   transition: background-color 180ms ease, color 180ms ease;
 }
