@@ -20,8 +20,16 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-base="./">
-  <div id="page-loader"></div>
-  <div id="site-header"></div>
+  
+  <header class="site-header">
+  <a class="site-logo" href="{{BASE}}index.html">风易</a>
+  <nav class="site-nav" aria-label="主导航">
+    <a href="{{BASE}}posts.html">诗集</a>
+    <a href="{{BASE}}category.html">分类</a>
+    <a href="{{BASE}}about.html">关于</a>
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+</header>
 
   <main class="home">
     <a class="home-title" href="posts.html" aria-label="进入诗集">风易</a>
