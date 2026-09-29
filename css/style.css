@@ -66,7 +66,7 @@ button {
 
 ::selection {
   background: var(--accent);
-  color: var(--bg;
+  color: var(--bg);
 }
 
 .site-header {
