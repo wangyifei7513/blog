@@ -138,19 +138,36 @@ async function loadPoemData() {
 
 
 
-    const poems =
-      await response.json();
+let poems =
+  await response.json();
+
+
+// posts.html?category=xxx 分类筛选
+const params =
+  new URLSearchParams(window.location.search);
+
+const category =
+  params.get("category");
+
+
+if (category) {
+
+  poems = poems.filter(
+    poem => poem.category === category
+  );
+
+}
 
 
 
-    if (postList) {
+if (postList) {
 
-      renderPosts(
-        postList,
-        poems
-      );
+  renderPosts(
+    postList,
+    poems
+  );
 
-    }
+}
 
 
 
