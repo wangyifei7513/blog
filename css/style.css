@@ -64,10 +64,7 @@ button {
   font: inherit;
 }
 
-::selection {
-  background: var(--accent);
-  color: var(--bg);
-}
+
 
 .site-header {
   width: min(calc(100% - 48px), var(--max-width));
