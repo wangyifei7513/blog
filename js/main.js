@@ -148,32 +148,88 @@ async function loadPoemData() {
       category.html 永远显示全部分类
     */
 
-    if (postList) {
+if (postList) { 
 
-      const params =
-        new URLSearchParams(window.location.search);
-
-
-      const category =
-        params.get("category");
+  const params = 
+    new URLSearchParams(window.location.search); 
 
 
-      if (category) {
-
-        poems =
-          poems.filter(
-            poem => poem.category === category
-          );
-
-      }
+  const category = 
+    params.get("category"); 
 
 
-      renderPosts(
-        postList,
-        poems
+  const title =
+    document.getElementById("posts-title");
+
+
+  const description =
+    document.getElementById("posts-description");
+
+
+  if (category) { 
+
+
+    poems =
+      poems.filter( 
+        poem => poem.category === category 
       );
 
+
+    // 修改页面标题
+    document.title =
+      `${category} · 风易`;
+
+
+    // 修改页面大标题
+    if (title) {
+
+      title.textContent =
+        category;
+
     }
+
+
+    // 修改描述
+    if (description) {
+
+      description.textContent =
+        "该分类下的作品。";
+
+    }
+
+
+  } else {
+
+
+    // 普通诗集页面
+    document.title =
+      "诗集 · 风易";
+
+
+    if (title) {
+
+      title.textContent =
+        "詩集";
+
+    }
+
+
+    if (description) {
+
+      description.textContent =
+        "按创作时间排列的作品。";
+
+    }
+
+  }
+
+
+  renderPosts(
+    postList,
+    poems
+  );
+
+}
 
 
 
