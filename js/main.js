@@ -138,36 +138,42 @@ async function loadPoemData() {
 
 
 
-let poems =
-  await response.json();
-
-
-// posts.html?category=xxx 分类筛选
-const params =
-  new URLSearchParams(window.location.search);
-
-const category =
-  params.get("category");
-
-
-if (category) {
-
-  poems = poems.filter(
-    poem => poem.category === category
-  );
-
-}
+    let poems =
+      await response.json();
 
 
 
-if (postList) {
+    /*
+      只有 posts.html 进行分类筛选
+      category.html 永远显示全部分类
+    */
 
-  renderPosts(
-    postList,
-    poems
-  );
+    if (postList) {
 
-}
+      const params =
+        new URLSearchParams(window.location.search);
+
+
+      const category =
+        params.get("category");
+
+
+      if (category) {
+
+        poems =
+          poems.filter(
+            poem => poem.category === category
+          );
+
+      }
+
+
+      renderPosts(
+        postList,
+        poems
+      );
+
+    }
 
 
 
@@ -219,7 +225,6 @@ function renderPosts(container, poems) {
       (a, b) =>
         b.date.localeCompare(a.date)
     );
-
 
 
   const groups =
@@ -286,7 +291,6 @@ function renderPosts(container, poems) {
         "post-item";
 
 
-
       item.href =
         poem.url;
 
@@ -295,23 +299,15 @@ function renderPosts(container, poems) {
       item.innerHTML = `
 
         <time class="post-date" datetime="${poem.date}">
-
           ${formatDate(poem.date)}
-
         </time>
 
-
         <span class="post-title">
-
           ${escapeHTML(poem.title)}
-
         </span>
 
-
         <span class="post-category">
-
           ${escapeHTML(poem.category)}
-
         </span>
 
       `;
@@ -391,16 +387,11 @@ function renderCategories(container, poems) {
       item.innerHTML = `
 
         <span class="category-name">
-
           ${escapeHTML(category)}
-
         </span>
 
-
         <span class="category-count">
-
           ${count} 篇作品
-
         </span>
 
       `;
